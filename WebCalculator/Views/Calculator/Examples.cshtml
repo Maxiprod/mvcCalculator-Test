@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Examples";
+}
+
+<style>
+    .div:hover {
+    display: block;
+}
+</style>
+
+<h3 id="hOperators">Valid Operators</h3>
+<div id="divOperators" class="hoverable" style="display:none">
+    <ul class="list-unstyled">
+        <li>+ Addition</li>
+        <li>- Subtraction</li>
+        <li>* Multiplication</li>
+        <li>/ Division</li>
+        <li>% Modulo</li>
+        <li>^ Exponent</li>
+    </ul>
+</div>
+
+<h3 id="hBrackets">Valid Brackets</h3>
+<div id="divBrackets" class="hoverable" style="display:none">
+    <ul class="list-unstyled">
+        <li>()</li>
+        <li>[]</li>
+        <li>{}</li>
+    </ul>
+</div>
+
+<h3 id="hExamples">Examples</h3>
+<div id="divExamples" class="hoverable" style="display:none">
+    <ul class="list-unstyled">
+        <li>
+            Enter 1+2*4
+            <ul>
+                <b>Results</b>
+                <li>9</li>
+            </ul>
+        </li>
+        <li>
+            Enter (6+5)*(4-2)
+            <ul >
+                <b>Results</b>
+                <li>11*(4-2)</li>
+                <li>11*2</li>
+                <li>22</li>
+            </ul>
+        </li>
+        <li>
+            Enter [2+2]^(3-1*2)
+            <ul>
+                <b>Results</b>
+                <li>4^(3-1*2)</li>
+                <li>4^1</li>
+                <li>4</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#hOperators').mouseenter(function () {
+            $('#divOperators').show();
+        });
+        $('#hBrackets').mouseenter(function () {
+            $('#divBrackets').show();
+        });
+        $('#hExamples').mouseenter(function () {
+            $('#divExamples').show();
+        });
+        $('#hOperators').mouseleave(function () {
+            $('#divOperators.hoverable').hide();
+        });
+        $('#hBrackets').mouseleave(function () {
+            $('#divBrackets.hoverable').hide();
+        });
+        $('#hExamples').mouseleave(function () {
+            $('#divExamples.hoverable').hide();
+        });
+        $('#hOperators').click(function () {
+            $('#divOperators').toggleClass('hoverable');
+        });
+        $('#hBrackets').click(function () {
+            $('#divBrackets').toggleClass('hoverable');
+        });
+        $('#hExamples').click(function () {
+            $('#divExamples').toggleClass('hoverable');
+        });
+    });
+</script>

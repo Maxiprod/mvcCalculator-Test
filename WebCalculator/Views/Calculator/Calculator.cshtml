@@ -1,0 +1,40 @@
+﻿@model WebCalculator.Models.Calculator
+
+@{
+    ViewBag.Title = "Calculator";
+}
+
+
+@using (Html.BeginForm("Solve", "Calculator",FormMethod.Post, new { id = "calculatorForm" }))
+{
+
+    <h2>Calculator</h2>
+
+    <h3>Enter your algebraic expression </h3>
+
+    <p><input type="text" size="255" id="expression" name="expression" value="@Model.expression" /></p>
+
+    <p><input type="submit" value="Solve" class="btn btn-primary btn-lg" name="btnSolve" id="btnSolve" /></p>
+
+    if (Model.errorMessage != "")
+    {
+        <p>Error - @Model.errorMessage</p>
+    }
+    else if (Model.steps.Count > 0)
+    {
+
+        if (!string.IsNullOrWhiteSpace(Model.result))
+        {
+            <p>And the answer is ....  <b>@Model.result</b></p>
+        }
+
+        <h4>Steps</h4>
+        <div>            
+            @Html.DisplayFor(s => s.steps, "Steps")
+        </div>
+    }
+
+}
+
+
+

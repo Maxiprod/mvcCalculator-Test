@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Web Calculator";
+}
+
+<div class="jumbotron">
+    <h1>Web Calculator</h1>
+    <p class="lead">Web Calculator expects a well-formed, algebraic expression.  It returns the solution in steps following the standard order of operations. </p>
+    <p class="lead">Click @Html.ActionLink("here", "Examples", "Calculator") to see some examples and a list of available operators and brackets. </p>
+    <p>@Html.ActionLink("Try it now", "Calculator", "Calculator", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p>
+</div>
