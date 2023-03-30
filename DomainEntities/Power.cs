@@ -53,6 +53,7 @@ namespace DomainEntities
 
         public double Solve(double exponent)
         {
+            Console.WriteLine("as")
             m_exponent = exponent;
             return Solve();
         }
